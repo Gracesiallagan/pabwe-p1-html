@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Pendaftaran</title>
+    <script>
+      // Script untuk menampilkan kotak input jika "Lainnya" dicentang
+      function toggleLainnya(checkbox) {
+        var inputBox = document.getElementById("hobi_lainnya");
+        if (checkbox.checked) {
+          inputBox.style.display = "inline";
+        } else {
+          inputBox.style.display = "none";
+          inputBox.value = "";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Navigasi -->
+    <div>
+      <a href="blog.html">Blog</a> | <a href="detailblog.html">Detail Blog</a> |
+      <a href="form.html">Form Pendaftaran</a> |
+      <a href="nilai.html">Tabel Nilai</a> |
+      <a href="cv.html">Curriculum Vitae</a>
+    </div>
+    <hr />
+
+    <h1>Form Pendaftaran</h1>
+    <form>
+      <!-- Nama -->
+      <label>Nama Lengkap:</label>
+      <input type="text" name="nama" required style="width: 400px" />
+      <br /><br />
+
+      <!-- Jenis Kelamin -->
+      <label>Jenis Kelamin:</label>
+      <input type="radio" name="jk" value="Laki-laki" /> Laki-laki
+      <input type="radio" name="jk" value="Perempuan" /> Perempuan <br /><br />
+
+      <!-- Tempat Lahir -->
+      <label>Tempat Lahir:</label>
+      <input type="text" name="tempat_lahir" required style="width: 400px" />
+      <br /><br />
+
+      <!-- Tanggal Lahir -->
+      <label>Tanggal Lahir:</label>
+      <input type="date" name="tgl_lahir" />
+      <br /><br />
+
+      <!-- Hobi -->
+      <label>Hobi:</label><br />
+      <input type="checkbox" name="hobi" value="Membaca" /> Membaca <br />
+      <input type="checkbox" name="hobi" value="Olahraga" /> Olahraga <br />
+      <input type="checkbox" name="hobi" value=" Bermain Musik" /> Musik <br />
+      <input type="checkbox" name="hobi" value="Menari" /> Menari<br />
+      <input type="checkbox" name="hobi" value="Olahraga" /> Olahraga <br />
+      <input
+        type="checkbox"
+        name="hobi"
+        value="Lainnya"
+        onclick="toggleLainnya(this)"
+      />
+      Lainnya
+      <input
+        type="text"
+        id="hobi_lainnya"
+        name="hobi_lainnya"
+        style="display: none"
+        placeholder="Tulis hobi Anda"
+      />
+      <br /><br />
+
+      <!-- Password -->
+      <label>Password:</label>
+      <input type="password" name="password" required />
+      <br /><br />
+
+      <!-- Persetujuan -->
+      <input type="checkbox" name="setuju" required />
+      <label>Saya menyetujui syarat dan ketentuan</label>
+      <br /><br />
+
+      <!-- Tombol -->
+      <button type="reset">Reset</button>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
